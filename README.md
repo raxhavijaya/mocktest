@@ -12,3 +12,4 @@ Fitur di website :
 
 Link :
 > Github : https://github.com/raxhavijaya/mocktest.git
+> Netlify : https://master--superlative-belekoy-ae7271.netlify.app/
