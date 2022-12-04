@@ -1,11 +1,8 @@
 import React, { useRef } from "react";
-import ToDoListPage from "../ToDoListSection/ToDoListPage";
 import "./LoginPage.css";
-import { useNavigate, Navigate } from "react-router-dom";
 import Todos from "../ToDoListSection/Todos";
 
 function LoginPage() {
-  const navigate = useNavigate();
   const password = useRef();
 
   const getPassword = localStorage.getItem("passwordData");

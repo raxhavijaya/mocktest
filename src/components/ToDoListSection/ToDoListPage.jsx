@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate} from "react-router-dom";
-import './ToDoList.css';
+import { useNavigate } from "react-router-dom";
+import "./ToDoList.css";
 const ToDoListPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const handleClick=()=>{
+  const handleClick = () => {
     localStorage.clear();
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   const [todoDetails, setTodoDetails] = useState();
 
@@ -17,7 +17,7 @@ const ToDoListPage = () => {
     axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`).then((res) => {
       const responseTodo = res.data;
       setTodoDetails(responseTodo);
-    });
+    }); // eslint-disable-next-line
   }, []);
   const { id: todoId, userId, title, completed } = todoDetails || {};
   return (
@@ -34,7 +34,9 @@ const ToDoListPage = () => {
               </span>
             </li>
           </ul>
-          <button className="buttonLogout" onClick={handleClick}>Logout</button>
+          <button className="buttonLogout" onClick={handleClick}>
+            Logout
+          </button>
         </div>
       ) : (
         <div>Loading</div>
